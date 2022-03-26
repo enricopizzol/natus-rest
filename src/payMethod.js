@@ -2,9 +2,7 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faCircle,
-} from "@fortawesome/free-solid-svg-icons";
+import { faCircle, faCheckCircle } from "@fortawesome/free-solid-svg-icons";
 import './payMethod.css';
 
 
@@ -13,17 +11,30 @@ const PayMethod = () => {
   const [debitSelected, setDebitValue] = useState(false);
   const [cashSelected, setCashValue] = useState(false);
 
-  const toggleComplete = () => {
-    setCreditValue();
+  const toggleCredit = (value) => {
+    setCreditValue(!value);
   };
+    const toggleDebit = (value) => {
+      setDebitValue(!value);
+    };
+      const toggleCash = (value) => {
+        setCashValue(!value);
+      };
 
   return (
     <>
       <div className="item-list">
         <div className="item-container">
-          <div className="item-name" onClick={() => toggleComplete()}>
+          <div
+            className="item-name"
+            onClick={() => toggleCredit(creditSelected)}
+          >
             {creditSelected ? (
-              <>{console.log("entrou no credito")};</>
+              <>
+                <FontAwesomeIcon icon={faCheckCircle} />
+                <span>{"credito"}</span>
+                {console.log("entrou no credito")}
+              </>
             ) : (
               <>
                 <FontAwesomeIcon icon={faCircle} />
@@ -31,9 +42,16 @@ const PayMethod = () => {
               </>
             )}
           </div>
-          <div className="item-name" onClick={() => toggleComplete()}>
-            {creditSelected ? (
-              <>{console.log("entrou no credito")};</>
+          <div
+            className="item-name"
+            onClick={() => toggleDebit(debitSelected)}
+          >
+            {debitSelected ? (
+              <>
+                <FontAwesomeIcon icon={faCheckCircle} />
+                <span>{"debito"}</span>
+                {console.log("entrou no débito")}
+              </>
             ) : (
               <>
                 <FontAwesomeIcon icon={faCircle} />
@@ -41,9 +59,13 @@ const PayMethod = () => {
               </>
             )}
           </div>
-          <div className="item-name" onClick={() => toggleComplete()}>
-            {creditSelected ? (
-              <>{console.log("entrou no credito")};</>
+          <div className="item-name" onClick={() => toggleCash(cashSelected)}>
+            {cashSelected ? (
+              <>
+                {console.log("entrou no dinheiro")}
+                <FontAwesomeIcon icon={faCheckCircle} />
+                <span>{"dinheiro"}</span>
+              </>
             ) : (
               <>
                 <FontAwesomeIcon icon={faCircle} />
