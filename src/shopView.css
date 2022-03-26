@@ -1,0 +1,31 @@
+.title {
+  background: #dcf1de;
+  color: #317873;
+  margin-top: 1em;
+  margin-bottom: 1em;
+  display: inline-block;
+  text-align: center;
+  border-radius: 10px;
+  padding: 5px;
+  font-size: large;
+  
+}
+
+
+.menu-buttom {
+  cursor: pointer;
+}
+
+.menu-buttom svg {
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+.item-container {
+  height:auto;
+  width: auto;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 0 20px 0;
+  border-bottom: 1px #317873 solid;
+}
