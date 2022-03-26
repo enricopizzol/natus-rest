@@ -15,43 +15,43 @@ const ProductList = () => {
   const defaultValue = 0
   const [items, setItems] = useState([
     {
-      itemName: "sanduba",
+      itemName: "Sanduba",
       quantity: defaultValue,
       price: 10,
       isSelected: false,
     },
     {
-      itemName: "pão de queijo",
+      itemName: "Pão de queijo",
       quantity: defaultValue,
       price: 5,
       isSelected: false,
     },
     {
-      itemName: "cocacola",
+      itemName: "Coca - Cola",
       quantity: defaultValue,
       price: 5.5,
       isSelected: false,
     },
     {
-      itemName: "hamburgão",
+      itemName: "Hamburgão",
       quantity: defaultValue,
       price: 10,
       isSelected: false,
     },
     {
-      itemName: "enroladinho",
+      itemName: "Enroladinho",
       quantity: defaultValue,
       price: 5,
       isSelected: false,
     },
     {
-      itemName: "guaraná",
+      itemName: "Guaraná",
       quantity: defaultValue,
       price: 5.5,
       isSelected: false,
     },
     {
-      itemName: "salada de fruta",
+      itemName: "Salada de fruta",
       quantity: defaultValue,
       price: 7.5,
       isSelected: false,
@@ -91,9 +91,11 @@ const ProductList = () => {
   const handleQuantityDecrease = (index) => {
     const newItems = [...items];
 
-    newItems[index].quantity--;
+    if (newItems[index].quantity > 0)
+      newItems[index].quantity--;
 
     setItems(newItems);
+    calculateBill();
     calculateTotal();
   };
 
@@ -127,7 +129,7 @@ const ProductList = () => {
     <div className="app-background">
       <div className="main-container">
         <div className="add-item-box">
-          <label>Product List</label>
+          <label>Lista de Produtos</label>
         </div>
         <div className="item-list">
           {items.map((item, index) => (
@@ -163,8 +165,7 @@ const ProductList = () => {
             </div>
           ))}
         </div>
-        <div className="total">Total: {totalItemCount}</div>
-        <div className="total">Bill: {bill}</div>
+        <div className="total">Total a pagar: R$ {bill}</div>
       </div>
     </div>
   );

@@ -97,7 +97,7 @@ input:focus {
 }
 
 .total {
-  float: right;
+  float: left;
   padding: 10px;
 }
 

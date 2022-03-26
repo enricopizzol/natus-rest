@@ -5,15 +5,14 @@ import "./shopView.css";
 import ProductList from "./ProducList";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCheckCircle, faCircle } from "@fortawesome/free-solid-svg-icons";
+import PayMethod from "./payMethod";
 const ShopView = () => {
   return (
     <>
-      <div className="title">
-        <label>Product List</label>
-      </div>
       <Container>
         <ContainerProducts>
           <ProductList />
+          <PayMethod/>
         </ContainerProducts>
       </Container>
       {/* <div className="item-container">

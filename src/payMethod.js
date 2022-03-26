@@ -40,55 +40,60 @@ const PayMethod = () => {
 
   return (
     <>
-      <div className="item-list">
-        <div className="item-container">
+      <div className="payment-list">
+        <div className="payment-container">
           <div
-            className="item-name"
+            className="payment-name"
             onClick={() => toggleCredit(creditSelected)}
           >
             {creditSelected ? (
               <>
                 <FontAwesomeIcon icon={faCheckCircle} />
-                <span>{"credito"}</span>
+                <span>{"Crédito"}</span>
                 {console.log("entrou no credito")}
               </>
             ) : (
               <>
                 <FontAwesomeIcon icon={faCircle} />
-                <span>{"credito"}</span>
+                <span>{"Crédito"}</span>
               </>
             )}
           </div>
-          <div className="item-name" onClick={() => toggleDebit(debitSelected)}>
+          <div className="payment-name" onClick={() => toggleDebit(debitSelected)}>
             {debitSelected ? (
               <>
                 <FontAwesomeIcon icon={faCheckCircle} />
-                <span>{"debito"}</span>
+                <span>{"Débito"}</span>
                 {console.log("entrou no débito")}
               </>
             ) : (
               <>
                 <FontAwesomeIcon icon={faCircle} />
-                <span>{"debito"}</span>
+                <span>{"Débito"}</span>
               </>
             )}
           </div>
-          <div className="item-name" onClick={() => toggleCash(cashSelected)}>
+          <div className="payment-name" onClick={() => toggleCash(cashSelected)}>
             {cashSelected ? (
               <>
                 {console.log("entrou no dinheiro")}
                 <FontAwesomeIcon icon={faCheckCircle} />
-                <span>{"dinheiro"}</span>
+                <span>{"Dinheiro"}</span>
               </>
             ) : (
               <>
                 <FontAwesomeIcon icon={faCircle} />
-                <span>{"dinheiro"}</span>
+                <span>{"Dinheiro"}</span>
               </>
             )}
+          </div>      
+          <div class = "payment-button-container">
+              <button class = "payment-button">Comprar</button>
           </div>
         </div>
+        
       </div>
+
     </>
   );
 };

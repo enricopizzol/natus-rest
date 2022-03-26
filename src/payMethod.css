@@ -1,8 +1,11 @@
-.item-list {
+.payment-list {
+  margin-top: 15px;
+  border-radius: 10px;
+  padding-left: 20px;
   background-color: #317873;
 }
 
-.item-container {
+.payment-container {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -10,11 +13,23 @@
   border-bottom: 1px hsl(176, 42%, 33%) solid;
 }
 
-.item-name {
+.payment-name {
+  padding-top: 5px;
   cursor: pointer;
 }
 
-.item-name svg {
+.payment-name svg {
   margin-left: 5px;
   margin-right: 5px;
+}
+
+.payment-button-container {
+  background: white;
+  border-radius: 10px;
+  margin-top: 20px;
+  width: 150px;
+}
+
+.payment-button {
+  color:#317873;
 }
