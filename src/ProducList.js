@@ -124,7 +124,7 @@ const ProductList = () => {
    };
 
   return (
-    <span className="app-background">
+    <div className="app-background">
       <div className="main-container">
         <div className="add-item-box">
           <label>Product List</label>
@@ -166,7 +166,7 @@ const ProductList = () => {
         <div className="total">Total: {totalItemCount}</div>
         <div className="total">Bill: {bill}</div>
       </div>
-    </span>
+    </div>
   );
 };
 
