@@ -1,25 +1,42 @@
-
 import React, { useState } from "react";
 import styled from "styled-components";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCircle, faCheckCircle } from "@fortawesome/free-solid-svg-icons";
-import './payMethod.css';
-
+import "./payMethod.css";
 
 const PayMethod = () => {
   const [creditSelected, setCreditValue] = useState(false);
   const [debitSelected, setDebitValue] = useState(false);
   const [cashSelected, setCashValue] = useState(false);
+  const [currentOption, setCurrentOption] = useState("");
 
   const toggleCredit = (value) => {
+    disableLastToggle(currentOption);
+    setCurrentOption("credit");
     setCreditValue(!value);
   };
-    const toggleDebit = (value) => {
-      setDebitValue(!value);
-    };
-      const toggleCash = (value) => {
-        setCashValue(!value);
-      };
+  const toggleDebit = (value) => {
+    disableLastToggle(currentOption);
+    setCurrentOption("debit");
+    setDebitValue(!value);
+  };
+  const toggleCash = (value) => {
+    disableLastToggle(currentOption);
+    setCurrentOption("cash");
+    setCashValue(!value);
+  };
+
+  const disableLastToggle = (option) => {
+    if (option === "credit") {
+      setCreditValue(false);
+    }
+    if (option === "debit") {
+      setDebitValue(false);
+    }
+    if (option === "cash") {
+      setCashValue(false);
+    }
+  };
 
   return (
     <>
@@ -42,10 +59,7 @@ const PayMethod = () => {
               </>
             )}
           </div>
-          <div
-            className="item-name"
-            onClick={() => toggleDebit(debitSelected)}
-          >
+          <div className="item-name" onClick={() => toggleDebit(debitSelected)}>
             {debitSelected ? (
               <>
                 <FontAwesomeIcon icon={faCheckCircle} />
@@ -78,7 +92,5 @@ const PayMethod = () => {
     </>
   );
 };
-
-
 
 export default PayMethod;
