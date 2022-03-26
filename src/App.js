@@ -15,9 +15,9 @@ const App = () => {
 
   const defaultValue = 0
   const [items, setItems] = useState([
-    { itemName: "item 1", quantity: defaultValue, price: 2, isSelected: false },
-    { itemName: "item 2", quantity: defaultValue, price: 2, isSelected: false },
-    { itemName: "item 3", quantity: defaultValue, price: 2, isSelected: false },
+    { itemName: "item 1", quantity: defaultValue, price: 10, isSelected: false },
+    { itemName: "item 2", quantity: defaultValue, price: 10, isSelected: false },
+    { itemName: "item 3", quantity: defaultValue, price: 10, isSelected: false },
     { itemName: "item 3", quantity: defaultValue, price: 2, isSelected: false },
     { itemName: "item 3", quantity: defaultValue, price: 2, isSelected: false },
     { itemName: "item 3", quantity: defaultValue, price: 2, isSelected: false },
@@ -56,6 +56,7 @@ const App = () => {
 
     setItems(newItems);
     calculateTotal();
+    calculateBill();
   };
 
   const handleQuantityDecrease = (index) => {
@@ -87,7 +88,7 @@ const App = () => {
 
    const calculateBill = () => {
      const totalBill = items.reduce((total, item) => {
-       return total + item.price;
+       return total + item.price*item.quantity;
      }, 0);
 
      setBill(totalBill);
@@ -134,7 +135,7 @@ const App = () => {
           ))}
         </div>
         <div className="total">Total: {totalItemCount}</div>
-        <div className="total">Bill: {totalItemCount}</div>
+        <div className="total">Bill: {bill}</div>
       </div>
     </div>
   );
