@@ -1,10 +1,7 @@
 import React from "react";
 import styled from "styled-components";
-//import "./productList.css";
 import "./shopView.css";
 import ProductList from "./ProducList";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCheckCircle, faCircle } from "@fortawesome/free-solid-svg-icons";
 import PayMethod from "./payMethod";
 const ShopView = () => {
   return (
@@ -15,12 +12,6 @@ const ShopView = () => {
           <PayMethod/>
         </ContainerProducts>
       </Container>
-      {/* <div className="item-container">
-        <div className="menu-buttom">
-          <FontAwesomeIcon icon={faCircle} />
-          <span>menu</span>
-        </div>
-      </div> */}
     </>
   );
 };
@@ -32,8 +23,10 @@ const Container = styled.div`
   width: auto;
   margin: auto;
   height: 100%;
-  background: #fff;
+  background: #a0d6b4;
   overflow: auto;
+  display: flex;
+  justify-content: center;
 `;
 
 const TitleContainer = styled.div`

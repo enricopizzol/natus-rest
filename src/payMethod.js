@@ -1,19 +1,27 @@
 import React, { useState } from "react";
-import styled from "styled-components";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCircle, faCheckCircle } from "@fortawesome/free-solid-svg-icons";
+import {
+  faCircle,
+  faCheckCircle,
+  faPlus,
+  faCheck,
+} from "@fortawesome/free-solid-svg-icons";
 import "./payMethod.css";
 
 const PayMethod = () => {
+  const [inputValue, setInputValue] = useState("");
   const [creditSelected, setCreditValue] = useState(false);
+  const [modalSelected, setModal] = useState(false);
   const [debitSelected, setDebitValue] = useState(false);
   const [cashSelected, setCashValue] = useState(false);
   const [currentOption, setCurrentOption] = useState("");
+  const [paymentButton, setPaymentButton] = useState(false);
 
   const toggleCredit = (value) => {
     disableLastToggle(currentOption);
     setCurrentOption("credit");
     setCreditValue(!value);
+    setModal(!value);
   };
   const toggleDebit = (value) => {
     disableLastToggle(currentOption);
@@ -29,17 +37,23 @@ const PayMethod = () => {
   const disableLastToggle = (option) => {
     if (option === "credit") {
       setCreditValue(false);
+      setModal(false);
     }
     if (option === "debit") {
       setDebitValue(false);
+      setModal(false);
     }
     if (option === "cash") {
       setCashValue(false);
+      setModal(false);
     }
   };
 
+  const validateId = (id) => {};
+
   return (
     <>
+      
       <div className="payment-list">
         <div className="payment-container">
           <div
@@ -59,7 +73,10 @@ const PayMethod = () => {
               </>
             )}
           </div>
-          <div className="payment-name" onClick={() => toggleDebit(debitSelected)}>
+          <div
+            className="payment-name"
+            onClick={() => toggleDebit(debitSelected)}
+          >
             {debitSelected ? (
               <>
                 <FontAwesomeIcon icon={faCheckCircle} />
@@ -73,7 +90,10 @@ const PayMethod = () => {
               </>
             )}
           </div>
-          <div className="payment-name" onClick={() => toggleCash(cashSelected)}>
+          <div
+            className="payment-name"
+            onClick={() => toggleCash(cashSelected)}
+          >
             {cashSelected ? (
               <>
                 {console.log("entrou no dinheiro")}
@@ -86,14 +106,25 @@ const PayMethod = () => {
                 <span>{"Dinheiro"}</span>
               </>
             )}
-          </div>      
-          <div class = "payment-button-container">
-              <button class = "payment-button">Comprar</button>
+          </div>
+          <div class="payment-button-container">
+            <button class="payment-button" >Comprar</button>
           </div>
         </div>
-        
       </div>
-
+      {modalSelected ? (
+        <div className="id-box">
+          <input
+            value={inputValue}
+            onChange={(event) => setInputValue(event.target.value)}
+            className="id-input"
+            placeholder="ID do Estudante"
+          />
+          <FontAwesomeIcon icon={faCheck} onClick={validateId(inputValue)} />
+        </div>
+      ) : (
+        console.log("")
+      )}
     </>
   );
 };

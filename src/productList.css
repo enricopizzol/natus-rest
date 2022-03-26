@@ -35,8 +35,7 @@ body {
 .add-item-box {
   background: #dcf1de;
   color: #317873;
-  margin-top: 1em;
-  margin-bottom: 1em;
+ 
   display: flex;
   align-items: center;
   border-radius: 10px;
