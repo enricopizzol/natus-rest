@@ -16,6 +16,7 @@ const PayMethod = () => {
   const [cashSelected, setCashValue] = useState(false);
   const [currentOption, setCurrentOption] = useState("");
   const [paymentButton, setPaymentButton] = useState(false);
+  const [credentialStatus, setCredentialStatus] = useState("");
 
   const toggleCredit = (value) => {
     disableLastToggle(currentOption);
@@ -49,11 +50,22 @@ const PayMethod = () => {
     }
   };
 
-  const validateId = (id) => {};
+  const buyButtonPressed = () => {
+    setPaymentButton(true);
+  };
+
+  const validateId = (id) => {
+    if (id === "707070" || id === "123456") {
+      setCredentialStatus("valid");
+    } else if (id === "808080" || id === "808080") {
+      setCredentialStatus("invalid");
+    }
+  };
+
+  const searchId = (id) => {};
 
   return (
     <>
-      
       <div className="payment-list">
         <div className="payment-container">
           <div
@@ -64,7 +76,6 @@ const PayMethod = () => {
               <>
                 <FontAwesomeIcon icon={faCheckCircle} />
                 <span>{"Crédito"}</span>
-                {console.log("entrou no credito")}
               </>
             ) : (
               <>
@@ -81,7 +92,6 @@ const PayMethod = () => {
               <>
                 <FontAwesomeIcon icon={faCheckCircle} />
                 <span>{"Débito"}</span>
-                {console.log("entrou no débito")}
               </>
             ) : (
               <>
@@ -96,7 +106,6 @@ const PayMethod = () => {
           >
             {cashSelected ? (
               <>
-                {console.log("entrou no dinheiro")}
                 <FontAwesomeIcon icon={faCheckCircle} />
                 <span>{"Dinheiro"}</span>
               </>
@@ -108,7 +117,9 @@ const PayMethod = () => {
             )}
           </div>
           <div class="payment-button-container">
-            <button class="payment-button" >Comprar</button>
+            <button class="payment-button" onClick={() => buyButtonPressed()}>
+              Comprar
+            </button>
           </div>
         </div>
       </div>
@@ -120,11 +131,26 @@ const PayMethod = () => {
             className="id-input"
             placeholder="ID do Estudante"
           />
-          <FontAwesomeIcon icon={faCheck} onClick={validateId(inputValue)} />
+          <FontAwesomeIcon
+            icon={faCheck}
+            onClick={() => validateId(inputValue)}
+          />
         </div>
-      ) : (
-        console.log("")
-      )}
+      ) : null}
+      {paymentButton ? (
+        <div className="id-box">
+          <label>Compra efetuada com sucesso!</label>
+        </div>
+      ) : null}
+      {credentialStatus === "valid" ? (
+        <div className="id-box">
+          <label>ID confirmado!</label>
+        </div>
+      ) : credentialStatus === "invalid" ? (
+        <div className="id-box">
+          <label>ID inválido!</label>
+        </div>
+      ) : null}
     </>
   );
 };
