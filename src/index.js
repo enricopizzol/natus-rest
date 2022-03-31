@@ -1,8 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
-import App from "./ProducList";
-import ShopView from "./Shopview";
+import ShopView from "./views/Shopview";
 ReactDOM.render(
   <React.StrictMode>
     <ShopView/>

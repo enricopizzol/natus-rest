@@ -1,8 +1,8 @@
 import React from "react";
 import styled from "styled-components";
 import "./shopView.css";
-import ProductList from "./ProducList";
-import PayMethod from "./payMethod";
+import ProductList from "../components/productList/ProducList";
+import PayMethod from "../components/payMethod/payMethod";
 const ShopView = () => {
   return (
     <>

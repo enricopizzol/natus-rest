@@ -1,82 +1,17 @@
-import React, { useState, useEffect } from "react";
-import "./productList.css";
+import React, { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { avalaibleProducts } from "./products";
 import {
   faChevronRight,
   faChevronLeft,
   faCircle,
   faCheckCircle,
-  faPlus,
 } from "@fortawesome/free-solid-svg-icons";
+import "./productList.css";
 
 const ProductList = () => {
-  
-
-  const defaultValue = 0
-  const [items, setItems] = useState([
-    {
-      itemName: "Sanduba",
-      quantity: defaultValue,
-      price: 10,
-      isSelected: false,
-    },
-    {
-      itemName: "Pão de queijo",
-      quantity: defaultValue,
-      price: 5,
-      isSelected: false,
-    },
-    {
-      itemName: "Coca - Cola",
-      quantity: defaultValue,
-      price: 5.5,
-      isSelected: false,
-    },
-    {
-      itemName: "Hamburgão",
-      quantity: defaultValue,
-      price: 10,
-      isSelected: false,
-    },
-    {
-      itemName: "Enroladinho",
-      quantity: defaultValue,
-      price: 5,
-      isSelected: false,
-    },
-    {
-      itemName: "Guaraná",
-      quantity: defaultValue,
-      price: 5.5,
-      isSelected: false,
-    },
-    {
-      itemName: "Salada de fruta",
-      quantity: defaultValue,
-      price: 7.5,
-      isSelected: false,
-    }
-   
-  ]);
-
-  const [inputValue, setInputValue] = useState("");
-  const [totalItemCount, setTotalItemCount] = useState(0);
   const [bill, setBill] = useState(0);
-
-  const handleAddButtonClick = () => {
-    const newItem = {
-      itemName: inputValue,
-      quantity: 1,
-      price: 0,
-      isSelected: false,
-    };
-
-    const newItems = [...items, newItem];
-
-    setItems(newItems);
-    setInputValue("");
-    calculateTotal();
-  };
+  const [items, setItems] = useState(avalaibleProducts());
 
   const handleQuantityIncrease = (index) => {
     const newItems = [...items];
@@ -84,23 +19,19 @@ const ProductList = () => {
     newItems[index].quantity++;
 
     setItems(newItems);
-    calculateTotal();
     calculateBill();
   };
 
   const handleQuantityDecrease = (index) => {
     const newItems = [...items];
 
-    if (newItems[index].quantity > 0)
-      newItems[index].quantity--;
+    if (newItems[index].quantity > 0) newItems[index].quantity--;
 
     setItems(newItems);
     calculateBill();
-    calculateTotal();
   };
 
-
-// desativa o produto quando clicado
+  // desativa o produto quando clicado
   const toggleComplete = (index) => {
     const newItems = [...items];
 
@@ -109,21 +40,13 @@ const ProductList = () => {
     setItems(newItems);
   };
 
-  const calculateTotal = () => {
-    const totalItemCount = items.reduce((total, item) => {
-      return total + item.quantity;
+  const calculateBill = () => {
+    const totalBill = items.reduce((total, item) => {
+      return total + item.price * item.quantity;
     }, 0);
 
-    setTotalItemCount(totalItemCount);
+    setBill(totalBill);
   };
-
-   const calculateBill = () => {
-     const totalBill = items.reduce((total, item) => {
-       return total + item.price*item.quantity;
-     }, 0);
-
-     setBill(totalBill);
-   };
 
   return (
     <div className="app-background">

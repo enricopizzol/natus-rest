@@ -3,7 +3,6 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faCircle,
   faCheckCircle,
-  faPlus,
   faCheck,
 } from "@fortawesome/free-solid-svg-icons";
 import "./payMethod.css";
@@ -62,6 +61,7 @@ const PayMethod = () => {
     }
   };
 
+  // to be done 
   const searchId = (id) => {};
 
   return (
