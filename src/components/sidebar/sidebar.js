@@ -1,4 +1,13 @@
-import React, { useState, useRef } from "react";
+import React, { useState } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+    faLeaf, 
+    faAngleRight,
+    faBurger, 
+    faWallet, 
+    faBoxesStacked, 
+    faNewspaper, 
+    faDoorOpen } from "@fortawesome/free-solid-svg-icons";
 import "./sidebar.css";
 
 const SideBar = () => {
@@ -11,19 +20,16 @@ const SideBar = () => {
 
     return(
         <>
-            <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'/>
             <nav className={"sidebar" + (sideBarExpanded ? "" : " close")}>
                 <header>
                     <div className="image-text">
-                        <span className="image">
-                            {/*<img src="logo.png" alt="">*/}
-                        </span>
 
                         <div className="text logo-text">
+                            <FontAwesomeIcon className="icon" icon={faLeaf} />
                             <span className="name">NatusRest</span>
                         </div>
                     </div>
-                    <i className='bx bx-chevron-right toggle' onClick = {() => toggleSideBar(sideBarExpanded)} ></i>
+                    <FontAwesomeIcon className = "toggle" icon = {faAngleRight} onClick = {() => toggleSideBar(sideBarExpanded)}/>
                 </header>
 
                 <div className="menu-bar">
@@ -32,53 +38,38 @@ const SideBar = () => {
                         <ul className="menu-links">
                             <li className="nav-link">
                                 <a href="#">
-                                    <i className='bx bx-home-alt icon' ></i>
-                                    <span className="text nav-text">Dashboard</span>
+                                    <FontAwesomeIcon className="icon" icon={faBurger} />
+                                    <span className="text nav-text">Cardápio</span>
                                 </a>
                             </li>
 
                             <li className="nav-link">
                                 <a href="#">
-                                    <i className='bx bx-bar-chart-alt-2 icon' ></i>
-                                    <span className="text nav-text">Revenue</span>
+                                    <FontAwesomeIcon className="icon" icon={faWallet} />
+                                    <span className="text nav-text">Saldo</span>
                                 </a>
                             </li>
 
                             <li className="nav-link">
                                 <a href="#">
-                                    <i className='bx bx-bell icon'></i>
-                                    <span className="text nav-text">Notifications</span>
+                                    <FontAwesomeIcon className="icon" icon={faBoxesStacked} />
+                                    <span className="text nav-text">Estoque</span>
                                 </a>
                             </li>
 
                             <li className="nav-link">
                                 <a href="#">
-                                    <i className='bx bx-pie-chart-alt icon' ></i>
-                                    <span className="text nav-text">Analytics</span>
+                                    <FontAwesomeIcon className="icon" icon={faNewspaper} />
+                                    <span className="text nav-text">Relatórios</span>
                                 </a>
                             </li>
-
-                            <li className="nav-link">
-                                <a href="#">
-                                    <i className='bx bx-heart icon' ></i>
-                                    <span className="text nav-text">Likes</span>
-                                </a>
-                            </li>
-
-                            <li className="nav-link">
-                                <a href="#">
-                                    <i className='bx bx-wallet icon' ></i>
-                                    <span className="text nav-text">Wallets</span>
-                                </a>
-                            </li>
-
                         </ul>
                     </div>
 
                     <div className="bottom-content">
                         <li className="">
                             <a href="#">
-                                <i className='bx bx-log-out icon' ></i>
+                                <FontAwesomeIcon className="icon" icon={faDoorOpen} />
                                 <span className="text nav-text">Logout</span>
                             </a>
                         </li>
