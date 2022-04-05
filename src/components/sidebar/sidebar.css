@@ -1,6 +1,6 @@
 /* Google Font Import - Poppins */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
-*{
+.sidebar *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -47,7 +47,7 @@ body{
     z-index: 100;  
 }
 .sidebar.close{
-    width: 88px;
+    width: 70px;
 }
 
 /* ===== Reusable code - Here ===== */
@@ -106,16 +106,10 @@ body{
     display: flex;
     flex-direction: row;
 }
-header .image-text .name {
+.sidebar header .image-text .name {
     margin-top: 2px;
     font-size: 18px;
     font-weight: 600;
-}
-
-header .image-text .profession{
-    font-size: 16px;
-    margin-top: -2px;
-    display: block;
 }
 
 .sidebar header .image{
