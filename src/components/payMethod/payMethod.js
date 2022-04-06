@@ -56,7 +56,7 @@ const PayMethod = () => {
   const validateId = (id) => {
     if (id === "707070" || id === "123456") {
       setCredentialStatus("valid");
-    } else if (id === "808080" || id === "808080") {
+    } else {
       setCredentialStatus("invalid");
     }
   };
