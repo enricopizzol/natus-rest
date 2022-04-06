@@ -66,91 +66,93 @@ const PayMethod = () => {
 
   return (
     <>
-      <div className="payment-list">
-        <div className="payment-container">
-          <div
-            className="payment-name"
-            onClick={() => toggleCredit(creditSelected)}
-          >
-            {creditSelected ? (
-              <>
-                <FontAwesomeIcon icon={faCheckCircle} />
-                <span>{"Crédito"}</span>
-              </>
-            ) : (
-              <>
-                <FontAwesomeIcon icon={faCircle} />
-                <span>{"Crédito"}</span>
-              </>
-            )}
-          </div>
-          <div
-            className="payment-name"
-            onClick={() => toggleDebit(debitSelected)}
-          >
-            {debitSelected ? (
-              <>
-                <FontAwesomeIcon icon={faCheckCircle} />
-                <span>{"Débito"}</span>
-              </>
-            ) : (
-              <>
-                <FontAwesomeIcon icon={faCircle} />
-                <span>{"Débito"}</span>
-              </>
-            )}
-          </div>
-          <div
-            className="payment-name"
-            onClick={() => toggleCash(cashSelected)}
-          >
-            {cashSelected ? (
-              <>
-                <FontAwesomeIcon icon={faCheckCircle} />
-                <span>{"Dinheiro"}</span>
-              </>
-            ) : (
-              <>
-                <FontAwesomeIcon icon={faCircle} />
-                <span>{"Dinheiro"}</span>
-              </>
-            )}
-          </div>
-          <div class="payment-button-container">
-            <button class="payment-button" onClick={() => buyButtonPressed()}>
-              Comprar
-            </button>
+      <div className = "pm-wrapper">
+        <div className="payment-list">
+          <div className="payment-container">
+            <div
+              className="payment-name"
+              onClick={() => toggleCredit(creditSelected)}
+            >
+              {creditSelected ? (
+                <>
+                  <FontAwesomeIcon icon={faCheckCircle} />
+                  <span>{"Crédito"}</span>
+                </>
+              ) : (
+                <>
+                  <FontAwesomeIcon icon={faCircle} />
+                  <span>{"Crédito"}</span>
+                </>
+              )}
+            </div>
+            <div
+              className="payment-name"
+              onClick={() => toggleDebit(debitSelected)}
+            >
+              {debitSelected ? (
+                <>
+                  <FontAwesomeIcon icon={faCheckCircle} />
+                  <span>{"Débito"}</span>
+                </>
+              ) : (
+                <>
+                  <FontAwesomeIcon icon={faCircle} />
+                  <span>{"Débito"}</span>
+                </>
+              )}
+            </div>
+            <div
+              className="payment-name"
+              onClick={() => toggleCash(cashSelected)}
+            >
+              {cashSelected ? (
+                <>
+                  <FontAwesomeIcon icon={faCheckCircle} />
+                  <span>{"Dinheiro"}</span>
+                </>
+              ) : (
+                <>
+                  <FontAwesomeIcon icon={faCircle} />
+                  <span>{"Dinheiro"}</span>
+                </>
+              )}
+            </div>
+            <div class="payment-button-container">
+              <button class="payment-button" onClick={() => buyButtonPressed()}>
+                Comprar
+              </button>
+            </div>
           </div>
         </div>
+        {modalSelected ? (
+          <div className="id-box">
+            <input
+              value={inputValue}
+              onChange={(event) => setInputValue(event.target.value)}
+              className="id-input"
+              placeholder="ID do Estudante"
+            />
+            <FontAwesomeIcon
+              icon={faCheck}
+              onClick={() => validateId(inputValue)}
+            />
+          </div>
+        ) : null}
+        {paymentButton ? (
+          <div className="id-box">
+            <label>Compra efetuada com sucesso!</label>
+          </div>
+        ) : null}
+        {credentialStatus === "valid" ? (
+          <div className="id-box">
+            <label>ID confirmado!</label>
+          </div>
+        ) : credentialStatus === "invalid" ? (
+          <div className="id-box">
+            <label>ID inválido!</label>
+          </div>
+        ) : null}
       </div>
-      {modalSelected ? (
-        <div className="id-box">
-          <input
-            value={inputValue}
-            onChange={(event) => setInputValue(event.target.value)}
-            className="id-input"
-            placeholder="ID do Estudante"
-          />
-          <FontAwesomeIcon
-            icon={faCheck}
-            onClick={() => validateId(inputValue)}
-          />
-        </div>
-      ) : null}
-      {paymentButton ? (
-        <div className="id-box">
-          <label>Compra efetuada com sucesso!</label>
-        </div>
-      ) : null}
-      {credentialStatus === "valid" ? (
-        <div className="id-box">
-          <label>ID confirmado!</label>
-        </div>
-      ) : credentialStatus === "invalid" ? (
-        <div className="id-box">
-          <label>ID inválido!</label>
-        </div>
-      ) : null}
     </>
   );
 };
