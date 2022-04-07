@@ -3,10 +3,13 @@ import styled from "styled-components";
 import "./shopView.css";
 import ProductList from "../components/productList/ProducList";
 import PayMethod from "../components/payMethod/payMethod";
+import SideBar from "../components/sidebar/sidebar";
+
 const ShopView = () => {
   return (
     <>
       <Container>
+        <SideBar/>
         <ContainerProducts>
           <ProductList />
           <PayMethod/>
@@ -54,3 +57,4 @@ const ContainerProducts = styled.div`
   padding: 20px;
   float: left;
 `;
+
