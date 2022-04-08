@@ -1,4 +1,6 @@
 import styled from "styled-components";
+import { Link } from "react-router-dom";
+
 
 export const Container = styled.div`
   width: 1920px;
@@ -70,6 +72,29 @@ export const Span = styled.span`
 `;
 
 export const ButtonLogin = styled.button`
+  width: 100%;
+  cursor: pointer;
+  background: #317873;
+  border-radius: 5px;
+  border: none;
+  color: white;
+  font-weight: bold;
+  height: 50px;
+  opacity: 0.9;
+  margin: 20px 0;
+  &:hover {
+    ${(props) =>
+      props.disabled === false
+        ? "transition: 0.2s ease; opacity: 1;"
+        : "cursor: not-allowed;"}
+  }
+`;
+
+export const StyledLink = styled(Link)`
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
   width: 100%;
   cursor: pointer;
   background: #317873;

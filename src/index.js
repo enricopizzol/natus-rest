@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, NavLink } from "react-router-dom";
 import { Login } from "./components/Login";
 import "./index.css";
 import ShopView from "./views/Shopview";
@@ -11,10 +11,9 @@ export default function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Login />}>
-          <Route index element={< ShopView />} />
-          <Route index element={< StockView />} />
-        </Route>
+        <Route path = "/" element={<Login />} />
+        <Route path = "shopview" index element={< ShopView />} />
+        <Route path = "stock" index element={< StockView />} />
       </Routes>
     </BrowserRouter>
   );
