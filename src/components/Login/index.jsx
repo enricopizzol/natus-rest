@@ -55,16 +55,9 @@ export const Login = () => {
             <FaEyeSlash onClick={changeTypePassword} />
           )}
         </InputContent>
-        <Span color="#317873">Esqueci minha senha</Span>
-
         <StyledLink to="shopview" disabled={!email || !password}>
           Entrar
         </StyledLink>
-
-        <RegisterContent>
-          <Span color="#ccc">Não tem uma conta? </Span>
-          <Span color="#317873">Registre-se</Span>
-        </RegisterContent>
       </Content>
     </Container>
   );

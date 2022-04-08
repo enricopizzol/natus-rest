@@ -3,13 +3,13 @@ import { Link } from "react-router-dom";
 
 
 export const Container = styled.div`
-  width: 1920px;
-  height: 1600px;
+  width: 100vw;
+  height: 100vh;
   background-color: #202024;
   border-radius: 5px;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  align-items: flex-end;
+  justify-content: space-around;
   @media (max-width: 415px) {
     width: 100%;
   }
