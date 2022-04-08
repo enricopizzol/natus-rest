@@ -4,14 +4,6 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Login } from "./components/Login";
 import "./index.css";
 import ShopView from "./views/Shopview";
-<<<<<<< Updated upstream
-ReactDOM.render(
-  <React.StrictMode>
-    <Login/>
-  </React.StrictMode>,
-  document.getElementById("root")
-);
-=======
 import StockView from "./views/StockView";
 
 
@@ -29,4 +21,3 @@ export default function App() {
 }
 
 ReactDOM.render(<App />, document.getElementById("root"));
->>>>>>> Stashed changes
