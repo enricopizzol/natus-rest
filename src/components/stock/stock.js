@@ -2,11 +2,9 @@ import React, { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { avalaibleProducts } from "../productList/products";
 import {
-  faCircle,
-  faCheckCircle,
-  faCheck,
-  faChevronLeft,
-  faChevronRight
+  faTrashCan,
+  faPlus,
+  faMinus,
 } from "@fortawesome/free-solid-svg-icons";
 import "./stock.css";
 
@@ -43,7 +41,7 @@ const Stock = () => {
           quantity: parseInt(prodQtt),
           price: prodPrice,
           isSelected: false
-        }
+      }
 
       itemsCopy.push(newItem)
       setItems(itemsCopy)
@@ -68,17 +66,17 @@ const Stock = () => {
                                 <div className ="stock-itemName">
                                     <h className = "stock-h">{item.itemName}</h>
                                 </div>
-                                <p className = "stock-p">Quantidade:{item.quantity}</p>
+                                <p className = "stock-p">Quantidade: {item.quantity}</p>
                                 <p className = "stock-p">Preço: R${item.price}</p>
                                 <div className = "stock-item-buttons">
-                                  <button onClick = {() => handleQuantityIncrease(index)} className = "stock-p">+</button>
-                                  <button onClick = {() => handleQuantityDecrease(index)} className = "stock-p">-</button>
-                                  <button onClick = {() => handleItemDelete(index)} className = "stock-p">Delete</button>
+                                  <FontAwesomeIcon className = "stock-button" icon={faPlus} onClick={() => handleQuantityIncrease(index)}/>
+                                  <FontAwesomeIcon className = "stock-button" icon={faMinus} onClick={() => handleQuantityDecrease(index)}/>
+                                  <FontAwesomeIcon className = "stock-button" icon={faTrashCan} onClick = {() => handleItemDelete(index)} />
                                 </div>
                             </div> 
                     ))}
                 </div>
-                <button onClick = {() => handleAddProduct()} className = "stock-p">Novo item</button>
+                <button onClick = {() => handleAddProduct()} className = "stock-new-item">Novo item</button>
             </div>
         </>
     )

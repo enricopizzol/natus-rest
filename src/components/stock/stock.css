@@ -46,3 +46,19 @@
     align-items: center;
 }
 
+.stock-item-buttons{
+    display: flex;
+    justify-content: space-around;
+}
+
+.stock-button{
+    font-size: 25px;
+}
+
+.stock-new-item{
+    border: solid #317873;
+    color: #317873;
+    border-radius: 15px;
+    font-size: 20px;
+    padding: 10px;
+}
