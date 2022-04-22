@@ -1,10 +1,11 @@
 import styled from "styled-components";
+import { Link } from "react-router-dom";
+
 
 export const Container = styled.div`
-  width: 400px;
-  height: 350px;
+  width: 100vw;
+  height: 100vh;
   background-color: #202024;
-  border-radius: 5px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -14,8 +15,6 @@ export const Container = styled.div`
 `;
 
 export const Content = styled.div`
-  width: 80%;
-  height: 75%;
   max-width: 300px;
   display: flex;
   flex-direction: column;
@@ -25,12 +24,10 @@ export const Content = styled.div`
 export const InputContent = styled.div`
   background-color: #121214;
   width: 100%;
-  height: 50px;
   display: flex;
   align-items: center;
   border-radius: 5px;
   border: 2px solid #121214;
-  padding: 0 5px;
   margin-bottom: 10px;
   svg {
     color: #353434;
@@ -70,6 +67,29 @@ export const Span = styled.span`
 `;
 
 export const ButtonLogin = styled.button`
+  width: 100%;
+  cursor: pointer;
+  background: #317873;
+  border-radius: 5px;
+  border: none;
+  color: white;
+  font-weight: bold;
+  height: 50px;
+  opacity: 0.9;
+  margin: 20px 0;
+  &:hover {
+    ${(props) =>
+      props.disabled === false
+        ? "transition: 0.2s ease; opacity: 1;"
+        : "cursor: not-allowed;"}
+  }
+`;
+
+export const StyledLink = styled(Link)`
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
   width: 100%;
   cursor: pointer;
   background: #317873;

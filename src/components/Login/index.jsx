@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import {
   Container,
   Content,
@@ -7,6 +8,7 @@ import {
   Span,
   ButtonLogin,
   RegisterContent,
+  StyledLink
 } from "./styles";
 import { FaEnvelope, FaLock, FaEye, FaEyeSlash } from "react-icons/fa";
 import { render } from "@testing-library/react";
@@ -53,14 +55,9 @@ export const Login = () => {
             <FaEyeSlash onClick={changeTypePassword} />
           )}
         </InputContent>
-        <Span color="#317873">Esqueci minha senha</Span>
-
-        <ButtonLogin disabled={!email || !password} >ENTRAR</ButtonLogin>
-
-        <RegisterContent>
-          <Span color="#ccc">Não tem uma conta? </Span>
-          <Span color="#317873">Registre-se</Span>
-        </RegisterContent>
+        <StyledLink to="shopview" disabled={!email || !password}>
+          Entrar
+        </StyledLink>
       </Content>
     </Container>
   );

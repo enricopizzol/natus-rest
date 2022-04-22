@@ -1,6 +1,9 @@
 .stock-item-container{
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
+    padding-left: 300px;
+    padding-right:300px;
 }
 
 .stock-item-data{
