@@ -12,8 +12,8 @@ export default function App() {
     <BrowserRouter>
       <Routes>
         <Route path = "/" element={<Login />} />
-        <Route path = "shopview" index element={< ShopView />} />
-        <Route path = "stock" index element={< StockView />} />
+        <Route path = "/shopview" index element={< ShopView />} />
+        <Route path = "/stockview" index element={< StockView />} />
       </Routes>
     </BrowserRouter>
   );

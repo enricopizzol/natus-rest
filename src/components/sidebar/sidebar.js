@@ -37,7 +37,7 @@ const SideBar = () => {
                     <div className="menu">
                         <ul className="menu-links">
                             <li className="nav-link">
-                                <a href="#">
+                                <a href="/shopview">
                                
                                     <FontAwesomeIcon className="icon" icon={faBurger} />
                                     
@@ -54,7 +54,7 @@ const SideBar = () => {
                             </li>
 
                             <li className="nav-link">
-                                <a href="#">
+                                <a href="/stockview">
                                     <FontAwesomeIcon className="icon" icon={faBoxesStacked} />
                                     <span className="text nav-text">Estoque</span>
                                 </a>
@@ -71,7 +71,7 @@ const SideBar = () => {
 
                     <div className="bottom-content">
                         <li className="">
-                            <a href="#">
+                            <a href="/">
                                 <FontAwesomeIcon className="icon" icon={faDoorOpen} />
                                 <span className="text nav-text">Logout</span>
                             </a>
