@@ -9,6 +9,17 @@ import {
     faNewspaper, 
     faDoorOpen } from "@fortawesome/free-solid-svg-icons";
 import "./sidebar.css";
+import {
+    Container,
+    Content,
+    InputContent,
+    Input,
+    Span,
+    ButtonLogin,
+    RegisterContent,
+    StyledLink
+  } from "../Login/styles";
+
 
 const SideBar = () => {
 
@@ -37,13 +48,21 @@ const SideBar = () => {
                     <div className="menu">
                         <ul className="menu-links">
                             <li className="nav-link">
-                                <a href="#">
+                                {
+                                    
+                                    
+                                <a href="/shopview">
+                                     <FontAwesomeIcon className="icon" icon={faBurger} />
+                                     <span className="text nav-text">Cardápio</span>
+                                </a>
+                                
+                                /* <a href="#">
                                
                                     <FontAwesomeIcon className="icon" icon={faBurger} />
                                     
                                     <span className="text nav-text">Cardápio</span>
                                    
-                                </a>
+                                </a> */}
                             </li>
                             
                             <li className="nav-link">
@@ -54,7 +73,7 @@ const SideBar = () => {
                             </li>
 
                             <li className="nav-link">
-                                <a href="#">
+                                <a href="/stock">
                                     <FontAwesomeIcon className="icon" icon={faBoxesStacked} />
                                     <span className="text nav-text">Estoque</span>
                                 </a>
