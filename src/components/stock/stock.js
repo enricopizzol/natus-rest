@@ -35,7 +35,7 @@ const Stock = () => {
       const itemsCopy = [...items];
       var prodName = prompt("Nome do Produto", "Insira o nome do produto")
       var prodPrice = prompt("Preço", "0")
-      var prodQtt = prompt("Quantidade em estoque", "Insira a quantidade em estoque")
+      var prodQtt = prompt("Quantidade em estoque", "0")
       var newItem = {
           itemName: prodName,
           quantity: parseInt(prodQtt),
