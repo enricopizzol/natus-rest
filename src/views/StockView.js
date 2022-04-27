@@ -6,8 +6,11 @@ import SideBar from "../components/sidebar/sidebar";
 const StockView = () => {
   return (
     <>
-      <SideBar/>
-      <Stock/>
+        <div className="fixebola">
+          <SideBar/>  
+          <Stock/>
+        </div>
+        
     </>
   );
 };

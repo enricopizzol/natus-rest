@@ -1,4 +1,5 @@
-.stock-main-container{
-    display:flex;
-    justify-content:space-between;
+.fixebola {
+    display: flex;
+    justify-content: space-between;
+    height: 100vh
 }

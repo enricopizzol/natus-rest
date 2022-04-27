@@ -4,17 +4,21 @@ import "./shopView.css";
 import ProductList from "../components/productList/ProducList";
 import PayMethod from "../components/payMethod/payMethod";
 import SideBar from "../components/sidebar/sidebar";
+import "./stockView.css";
 
 const ShopView = () => {
   return (
     <>
+    <div className="fixebola">
+    <SideBar/>
       <Container>
-        <SideBar/>
         <ContainerProducts>
           <ProductList />
           <PayMethod/>
         </ContainerProducts>
       </Container>
+    </div>
+      
     </>
   );
 };
@@ -27,7 +31,7 @@ const Container = styled.div`
   margin: auto;
   height: 100%;
   background: #a0d6b4;
-  overflow: auto;
+  // overflow: auto;
   display: flex;
   justify-content: center;
 `;
