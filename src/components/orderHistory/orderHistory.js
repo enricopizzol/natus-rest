@@ -7,7 +7,7 @@ import {
   faCircle,
   faCheckCircle,
 } from "@fortawesome/free-solid-svg-icons";
-import "./order_history.css";
+import "./orderHistory.css";
 
 const OrderHistory = () => {
   const [items, setItems] = useState(avalaibleProducts());
