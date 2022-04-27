@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import yolo from "./exemplo";
 import {
     faLeaf, 
     faAngleRight,
@@ -9,16 +10,6 @@ import {
     faNewspaper, 
     faDoorOpen } from "@fortawesome/free-solid-svg-icons";
 import "./sidebar.css";
-import {
-    Container,
-    Content,
-    InputContent,
-    Input,
-    Span,
-    ButtonLogin,
-    RegisterContent,
-    StyledLink
-  } from "../Login/styles";
 
 
 const SideBar = () => {
@@ -49,27 +40,19 @@ const SideBar = () => {
                         <ul className="menu-links">
                             <li className="nav-link">
                                 {
-                                    
-                                    
                                 <a href="/shopview">
                                      <FontAwesomeIcon className="icon" icon={faBurger} />
                                      <span className="text nav-text">Cardápio</span>
                                 </a>
-                                
-                                /* <a href="#">
-                               
-                                    <FontAwesomeIcon className="icon" icon={faBurger} />
-                                    
-                                    <span className="text nav-text">Cardápio</span>
-                                   
-                                </a> */}
+                                }
                             </li>
                             
                             <li className="nav-link">
-                                <a href="#">
+                                <li href="">
                                     <FontAwesomeIcon className="icon" icon={faWallet} />
-                                    <span className="text nav-text">Saldo</span>
-                                </a>
+                                    <span className="text nav-text">Saldo : R$ {parseFloat(yolo())}</span>
+                                    {/* Aqui jás o yolo que tem que mudar do SALDO */}
+                                </li>
                             </li>
 
                             <li className="nav-link">
