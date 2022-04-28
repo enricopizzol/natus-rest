@@ -1,0 +1,31 @@
+.hs-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.hs-order-container {
+    margin: 20px;
+    padding:20px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background: #317873;
+    border-radius: 10px;
+}
+
+.hs td, .hs th{
+    padding:10px;
+    text-align: left;
+}
+
+.hs tr{
+    color: #317873;
+    border-radius: 10px;
+    text-align: left;
+    background: #dcf1de;
+}
+
+.hs td{
+    border-bottom-style: solid;
+    border-color: #dcf1de69;
+}

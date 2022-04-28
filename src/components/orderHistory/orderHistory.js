@@ -16,8 +16,8 @@ const OrderHistory = () => {
         <>
             <div className="hs-container">
                 {userHistory["orders"].map((order, orderIndex) => (
-                    <>
-                        <table className="hs-order-container">
+                    <div className="hs-order-container">
+                        <table className="hs-table-container">
                             <tbody>
                                 <tr className = "hs">
                                     <th className = "hs">Produto</th>
@@ -33,9 +33,9 @@ const OrderHistory = () => {
                                 ))}
                             </tbody>
                         </table>
-                        <span>Total do pedido: {order["total"]}</span>
+                        <span>Total do pedido: R$ {order["total"]}</span>
                         <span>Data: {order["date"]}</span>
-                    </>
+                    </div>
                 ))}
             </div>
         </>
