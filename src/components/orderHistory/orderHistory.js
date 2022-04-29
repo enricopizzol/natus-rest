@@ -15,6 +15,9 @@ const OrderHistory = () => {
     return (
         <>
             <div className="hs-container">
+                <div className = "hs-title">
+                    <h>Histórico de Pedidos</h>
+                </div>
                 {userHistory["orders"].map((order, orderIndex) => (
                     <div className="hs-order-container">
                         <div className = "hs-table-wrapper">
