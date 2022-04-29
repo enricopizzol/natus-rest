@@ -17,22 +17,26 @@ const OrderHistory = () => {
             <div className="hs-container">
                 {userHistory["orders"].map((order, orderIndex) => (
                     <div className="hs-order-container">
-                        <table className="hs-table-container">
-                            <tbody>
-                                <tr className = "hs">
-                                    <th className = "hs">Produto</th>
-                                    <th className = "hs">Quantidade</th>
-                                    <th className = "hs">Preço</th>
-                                </tr>
-                                {order["products"].map((product, productIndex) => (
+                        <div className = "hs-table-wrapper">
+                            <table className="hs-table">
+                                <thead classname = "hs-head">
                                     <tr className = "hs">
-                                        <td className = "hs">{product.name}</td>
-                                        <td className = "hs">{product.quantity}</td>
-                                        <td className = "hs">{product.price}</td>
+                                        <th className = "hs">Produto</th>
+                                        <th className = "hs">Quantidade</th>
+                                        <th className = "hs">Preço</th>
                                     </tr>
-                                ))}
-                            </tbody>
-                        </table>
+                                </thead>
+                                <tbody classname = "hs">
+                                    {order["products"].map((product, productIndex) => (
+                                        <tr className = "hs">
+                                            <td className = "hs">{product.name}</td>
+                                            <td className = "hs">{product.quantity}</td>
+                                            <td className = "hs">R$ {product.price}</td>
+                                        </tr>
+                                    ))}
+                                </tbody>
+                            </table>
+                        </div>
                         <span>Total do pedido: R$ {order["total"]}</span>
                         <span>Data: {order["date"]}</span>
                     </div>

@@ -8,24 +8,41 @@
     padding:20px;
     display: flex;
     justify-content: space-around;
+    flex-wrap:wrap;
     align-items: center;
     background: #317873;
     border-radius: 10px;
 }
 
-.hs td, .hs th{
+.hs-table-wrapper {
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+td, th{
     padding:10px;
     text-align: left;
+    color:#317873;
 }
 
-.hs tr{
-    color: #317873;
+td {
+    font-size:25px;
+}
+
+thead {
+    background-color: #dcf1de;
+}
+
+.hs-table{
+    border-collapse:collapse;
+    background-color: white;
     border-radius: 10px;
-    text-align: left;
-    background: #dcf1de;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
 }
 
-.hs td{
-    border-bottom-style: solid;
-    border-color: #dcf1de69;
+tr:nth-child(even) {
+    background-color: aliceblue;
 }
+
+
