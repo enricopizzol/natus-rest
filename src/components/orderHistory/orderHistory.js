@@ -37,8 +37,10 @@ const OrderHistory = () => {
                                 </tbody>
                             </table>
                         </div>
-                        <span>Total do pedido: R$ {order["total"]}</span>
-                        <span>Data: {order["date"]}</span>
+                        <div className = "hs-order-values">
+                            <span>Total do pedido: R$ {order["total"]}</span>
+                            <span>Data: {order["date"]}</span>
+                        </div>
                     </div>
                 ))}
             </div>
