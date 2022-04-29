@@ -61,7 +61,7 @@ const SideBar = () => {
                             </li>
 
                             <li className="nav-link">
-                                <a href="#">
+                                <a href="/history">
                                     <FontAwesomeIcon className="icon" icon={faNewspaper} />
                                     <span className="text nav-text">Relatórios</span>
                                 </a>

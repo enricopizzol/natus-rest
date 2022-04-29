@@ -10,13 +10,13 @@ import {
   RegisterContent,
   StyledLink
 } from "./styles";
-import { FaEnvelope, FaLock, FaEye, FaEyeSlash } from "react-icons/fa";
+import { FaFingerprint, FaLock, FaEye, FaEyeSlash } from "react-icons/fa";
 import { render } from "@testing-library/react";
 import ShopView from "../../views/Shopview";
 
 export const Login = () => {
   const [typePassword, setTypePassword] = useState("password");
-  const [email, setEmail] = useState();
+  const [userId, setID] = useState();
   const [password, setPasword] = useState();
 
   const changeTypePassword = () => {
@@ -32,12 +32,12 @@ export const Login = () => {
     <Container>
       <Content>
         <InputContent>
-          <FaEnvelope />
+          <FaFingerprint />
           <Input
-            type="email"
-            placeholder="E-mail"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
+            type="text"
+            placeholder="ID"
+            value={userId}
+            onChange={(e) => setID(e.target.value)}
           />
         </InputContent>
         <InputContent>
@@ -55,7 +55,7 @@ export const Login = () => {
             <FaEyeSlash onClick={changeTypePassword} />
           )}
         </InputContent>
-        <StyledLink to="shopview" disabled={!email || !password}>
+        <StyledLink to="shopview" disabled={!userId || !password}>
           Entrar
         </StyledLink>
       </Content>
