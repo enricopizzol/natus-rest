@@ -27,6 +27,7 @@ const OrderHistory = () => {
                                         <th className = "hs">Produto</th>
                                         <th className = "hs">Quantidade</th>
                                         <th className = "hs">Preço</th>
+                                        <th className = "hs">Categoria</th>
                                     </tr>
                                 </thead>
                                 <tbody classname = "hs">
@@ -35,6 +36,7 @@ const OrderHistory = () => {
                                             <td className = "hs">{product.name}</td>
                                             <td className = "hs">{product.quantity}</td>
                                             <td className = "hs">R$ {product.price}</td>
+                                            <td className = "hs">{product.category}</td>
                                         </tr>
                                     ))}
                                 </tbody>

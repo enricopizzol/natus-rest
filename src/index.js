@@ -7,6 +7,7 @@ import "./index.css";
 import ShopView from "./views/Shopview";
 import StockView from "./views/StockView";
 import OrderHistoryView from "./views/OrderHistoryView";
+import StockReportView from "./views/StockReportView";
 
 
 export default function App() {
@@ -15,9 +16,10 @@ export default function App() {
       <Routes>
         <Route path = "/" element={<Login />} />
         <Route path = "/registration" element={<Registration />} />
-        <Route path = "/history" element = {<OrderHistoryView />} />  
+        <Route path = "/historyview" element = {<OrderHistoryView />} />  
         <Route path = "/shopview" index element={< ShopView />} />
         <Route path = "/stockview" index element={< StockView />} />
+        <Route path = "/stockreportview" element={< StockReportView />} />
       </Routes>
     </BrowserRouter>
   );

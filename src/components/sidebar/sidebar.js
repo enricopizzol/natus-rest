@@ -6,7 +6,8 @@ import {
     faBurger, 
     faWallet, 
     faBoxesStacked, 
-    faNewspaper, 
+    faNewspaper,
+    faClockRotateLeft,
     faDoorOpen } from "@fortawesome/free-solid-svg-icons";
 import "./sidebar.css";
 
@@ -61,7 +62,14 @@ const SideBar = () => {
                             </li>
 
                             <li className="nav-link">
-                                <a href="/history">
+                                <a href="/historyview">
+                                    <FontAwesomeIcon className="icon" icon={faClockRotateLeft} />
+                                    <span className="text nav-text">Histórico</span>
+                                </a>
+                            </li>
+
+                            <li className="nav-link">
+                                <a href="/stockreportview">
                                     <FontAwesomeIcon className="icon" icon={faNewspaper} />
                                     <span className="text nav-text">Relatórios</span>
                                 </a>

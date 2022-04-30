@@ -68,6 +68,7 @@ const Stock = () => {
                                 </div>
                                 <p className = "stock-p">Quantidade: {item.quantity}</p>
                                 <p className = "stock-p">Preço: R${item.price}</p>
+                                <p className = "stock-p">Categoria: {item.category}</p>
                                 <div className = "stock-item-buttons">
                                   <FontAwesomeIcon className = "stock-button" icon={faPlus} onClick={() => handleQuantityIncrease(index)}/>
                                   <FontAwesomeIcon className = "stock-button" icon={faMinus} onClick={() => handleQuantityDecrease(index)}/>
