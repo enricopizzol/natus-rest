@@ -108,4 +108,9 @@ export const StyledLink = styled(Link)`
   }
 `;
 
+export const RegisterLink = styled.a`
+  text-decoration: none;
+  color: #317873;
+`
+
 export const RegisterContent = styled.div``;

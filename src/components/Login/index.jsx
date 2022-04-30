@@ -8,7 +8,8 @@ import {
   Span,
   ButtonLogin,
   RegisterContent,
-  StyledLink
+  StyledLink,
+  RegisterLink
 } from "./styles";
 import { FaFingerprint, FaLock, FaEye, FaEyeSlash } from "react-icons/fa";
 import { render } from "@testing-library/react";
@@ -58,6 +59,7 @@ export const Login = () => {
         <StyledLink to="shopview" disabled={!userId || !password}>
           Entrar
         </StyledLink>
+        <StyledLink to="/registration" disabled={!true}>Registre-se</StyledLink>
       </Content>
     </Container>
   );

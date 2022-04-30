@@ -11,7 +11,8 @@ import { FaFingerprint, FaLock, FaEye, FaEyeSlash } from "react-icons/fa";
 export const Registration = () => {
   const [typePassword, setTypePassword] = useState("password");
   const [userId, setID] = useState();
-  const [password, setPasword] = useState();
+  const [password, setPasword] = useState("");
+  const [confirmationPassword, setConfirmationPasword] = useState("");
 
   const changeTypePassword = () => {
     if (typePassword === "password") {
@@ -53,7 +54,22 @@ export const Registration = () => {
             <FaEyeSlash onClick={changeTypePassword} />
           )}
         </InputContent>
-        <StyledLink onClick= {() => registerLoginAndRedirect(userId, password)} to = "" disabled={!userId || !password}>
+        <InputContent>
+          <FaLock />
+          <Input
+            type={typePassword}
+            placeholder="Confirme sua senha"
+            value={confirmationPassword}
+            onChange={(e) => setConfirmationPasword(e.target.value)}
+          />
+
+          {typePassword === "password" ? (
+            <FaEye onClick={changeTypePassword} />
+          ) : (
+            <FaEyeSlash onClick={changeTypePassword} />
+          )}
+        </InputContent>
+        <StyledLink onClick= {() => registerLoginAndRedirect(userId, password)} to = "" disabled={!password || !confirmationPassword}>
           Registrar
         </StyledLink>
       </Content>
