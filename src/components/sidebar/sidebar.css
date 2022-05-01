@@ -25,7 +25,6 @@
 
 body{
     min-height: 100vh;
-    background-color: var(--body-color);
     transition: var(--tran-05);
 }
 
@@ -36,7 +35,7 @@ body{
 
 /* ===== Sidebar ===== */
  .sidebar{
-    position: fixed;
+    position: relative;
     top: 0;
     left: 0;
     height: 100%;
@@ -45,6 +44,7 @@ body{
     background: var(--sidebar-color);
     transition: var(--tran-05);
     z-index: 100;  
+    border-bottom-right-radius: 30px;
 }
 .sidebar.close{
     width: 70px;

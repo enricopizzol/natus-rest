@@ -8,6 +8,7 @@ import ShopView from "./views/Shopview";
 import StockView from "./views/StockView";
 import OrderHistoryView from "./views/OrderHistoryView";
 import StockReportView from "./views/StockReportView";
+import Balanceview from "./views/balanceview";
 
 
 export default function App() {
@@ -20,6 +21,7 @@ export default function App() {
         <Route path = "/shopview" index element={< ShopView />} />
         <Route path = "/stockview" index element={< StockView />} />
         <Route path = "/stockreportview" element={< StockReportView />} />
+        <Route path = "/balanceview" element={<Balanceview/>} />
       </Routes>
     </BrowserRouter>
   );
