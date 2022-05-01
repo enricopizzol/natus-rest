@@ -6,7 +6,7 @@ import SideBar from "../components/sidebar/sidebar";
 const StockView = () => {
   return (
     <>
-        <div className="fixebola">
+        <div className="fixstock">
           <SideBar/>  
           <Stock/>
         </div>

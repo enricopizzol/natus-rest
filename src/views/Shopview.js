@@ -9,7 +9,7 @@ import "./stockView.css";
 const ShopView = () => {
   return (
     <>
-    <div className="fixebola">
+    <div className="fixshop">
     <SideBar/>
       <Container>
         <ContainerProducts>

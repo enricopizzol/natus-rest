@@ -15,7 +15,7 @@ const Stock = () => {
 
     return (
         <>  
-            <dic className = "stock-container">
+            <div className = "stock-container">
                 <div className = "stock-title">
                     <h>Estoque</h>
                 </div>
@@ -30,7 +30,7 @@ const Stock = () => {
                             </div> 
                     ))}
                 </div>
-            </dic>
+            </div>
         </>
     )
 }

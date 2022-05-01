@@ -53,10 +53,12 @@ const PayMethod = () => {
     setPaymentButton(true);
   };
 
+  let saldo = -40;
+
   const validateId = (id) => {
-    if (id === "707070" || id === "123456") {
+    if ((id === "707070" || id === "123456") && (saldo > -30)){
       setCredentialStatus("valid");
-    } else if (id === "808080" || id === "808080") {
+    } else if ((id === "808080" || id === "808080" ) || (saldo <= -30)) {
       setCredentialStatus("invalid");
     }
   };
@@ -148,7 +150,7 @@ const PayMethod = () => {
         </div>
       ) : credentialStatus === "invalid" ? (
         <div className="id-box">
-          <label>ID inválido!</label>
+          <label>ID inválido ou Saldo Insuficiente!</label>
         </div>
       ) : null}
     </>

@@ -48,11 +48,11 @@ const SideBar = () => {
                             </li>
                             
                             <li className="nav-link">
-                                <li href="">
+                                <a href="/balanceview">
                                     <FontAwesomeIcon className="icon" icon={faWallet} />
                                     <span className="text nav-text">Saldo : R$ {parseFloat(yolo())}</span>
                                     {/* Aqui jás o yolo que tem que mudar do SALDO */}
-                                </li>
+                                </a>
                             </li>
 
                             <li className="nav-link">
