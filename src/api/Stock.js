@@ -23,7 +23,7 @@ export function getProducts() {
 export function getProductByName(name) {
 
     const url = BASE_URL + '/' + name;
-
+  
   axios
     .get(url)
     .then((response) => {
@@ -83,7 +83,7 @@ export function updateProductPrice(name, price) {
 }
 
 
-export function insertStudent(name, price, quantity) {
+export function insertProduct(name, price, quantity) {
   axios
     .post(BASE_URL, newProduct(name, price, quantity))
     .then((response) => {

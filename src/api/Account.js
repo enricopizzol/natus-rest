@@ -1,4 +1,3 @@
-import { getValue } from "@testing-library/user-event/dist/utils";
 import axios from "axios";
 
 const BASE_URL = "http://localhost:8080/api/account/";
@@ -18,10 +17,10 @@ export function checkBalance(id) {
     });
 }
 
-export function checkBalance(id, value) {
+export function updateBalance(id, value) {
   const url = BASE_URL + id + "/" + value;
   axios
-    .get(url)
+    .put(url)
     .then((response) => {
       const data = response.data;
       console.log(data);

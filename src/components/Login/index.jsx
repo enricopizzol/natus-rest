@@ -1,19 +1,16 @@
-import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import React, { useState, useEffect } from "react";
+import { FaEye, FaEyeSlash, FaFingerprint, FaLock } from "react-icons/fa";
+import { checkBalance, updateBalance } from "../../api/Account";
+import { getHistory, insertOrder } from "../../api/history";
 import {
-  Container,
-  Content,
-  InputContent,
-  Input,
-  Span,
-  ButtonLogin,
-  RegisterContent,
-  StyledLink,
-  RegisterLink
-} from "./styles";
-import { FaFingerprint, FaLock, FaEye, FaEyeSlash } from "react-icons/fa";
-import { render } from "@testing-library/react";
-import ShopView from "../../views/Shopview";
+  deleteProduct,
+  getProductByName,
+  getProducts,
+  insertProduct,
+  updateProductQuantity,
+} from "../../api/Stock";
+import { getStudentById, getStudents, insertStudent } from "../../api/Students";
+import { Container, Content, Input, InputContent, StyledLink } from "./styles";
 
 export const Login = () => {
   const [typePassword, setTypePassword] = useState("password");
@@ -28,7 +25,30 @@ export const Login = () => {
     }
   };
 
+  const sleep = (milliseconds) => {
+    return new Promise((resolve) => setTimeout(resolve, milliseconds));
+  };
+
+  const doSomething = async () => {
+    await sleep(2000);
+    //do stuff
+  };
+  const shopcart = () =>{
+    return [{"name":"pao","price":10.0,"quantity":8},{"name":"pao2","price":10.0,"quantity":8},
+        {"name":"pao3","price":10.0,"quantity":8}
+    ];
+  };
+
+  useEffect(() => {
   
+    insertOrder(shopcart(),189.0,303059);
+    doSomething();
+   
+    
+
+
+  }, []);
+
   return (
     <Container>
       <Content>
@@ -59,7 +79,9 @@ export const Login = () => {
         <StyledLink to="shopview" disabled={!userId || !password}>
           Entrar
         </StyledLink>
-        <StyledLink to="/registration" disabled={!true}>Registre-se</StyledLink>
+        <StyledLink to="/registration" disabled={!true}>
+          Registre-se
+        </StyledLink>
       </Content>
     </Container>
   );
