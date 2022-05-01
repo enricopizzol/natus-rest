@@ -8,13 +8,11 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 
 const Balance = () => {
-  const [inputValue, setInputValue] = useState("");
-  const [inputValue2, setInputValue2] = useState("");
+  const [valueCredit, setInputValueCredit] = useState("");
+  const [valueEstorno, setValueEstorno] = useState("");
   const addCredit = () => {
-    console.log("Hey i wok");
   };
   const returnCredit = () =>{
-    console.log("Hey i wok too");
   }
 
   return (
@@ -26,8 +24,8 @@ const Balance = () => {
         <span className="addCredito">Adicionar Crédito</span>
         <div className="add-saldo">
           <input
-            value={inputValue}
-            onChange={(event) => setInputValue(event.target.value)}
+            value={valueCredit}
+            onChange={(event) => setInputValueCredit(event.target.value)}
             className="qtt-input"
             placeholder="Valor"
           />
@@ -41,8 +39,8 @@ const Balance = () => {
         <span className="addCredito">Estornar Crédito</span>
         <div className="add-saldo">
           <input
-            value={inputValue2}
-            onChange={(event) => setInputValue2(event.target.value)}
+            value={valueEstorno}
+            onChange={(event) => setValueEstorno(event.target.value)}
             className="qtt-input"
             placeholder="Valor"
           />

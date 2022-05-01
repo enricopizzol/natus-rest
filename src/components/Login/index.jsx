@@ -25,14 +25,6 @@ export const Login = () => {
     }
   };
 
-  const sleep = (milliseconds) => {
-    return new Promise((resolve) => setTimeout(resolve, milliseconds));
-  };
-
-  const doSomething = async () => {
-    await sleep(2000);
-    //do stuff
-  };
   const shopcart = () =>{
     return [{"name":"pao","price":10.0,"quantity":8},{"name":"pao2","price":10.0,"quantity":8},
         {"name":"pao3","price":10.0,"quantity":8}

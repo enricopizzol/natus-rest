@@ -63,9 +63,6 @@ const PayMethod = () => {
     }
   };
 
-  // to be done 
-  const searchId = (id) => {};
-
   return (
     <>
       <div className = "pm-wrapper">
