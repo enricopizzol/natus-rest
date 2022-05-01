@@ -1,13 +1,15 @@
 import React from "react";
-import "./stockView.css";
+import "./OrderHistoryView.css";
 import SideBar from "../components/sidebar/sidebar";
 import OrderHistory from "../components/orderHistory/orderHistory";
 
 const OrderHistoryView = () => {
   return (
     <>
-      <SideBar/>
-      <OrderHistory/>
+      <div className="fixOrderHistoryView">
+        <SideBar/>
+        <OrderHistory/>
+      </div>
     </>
   );
 };
