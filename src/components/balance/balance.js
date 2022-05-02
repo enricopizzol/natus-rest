@@ -10,6 +10,7 @@ import axios from "axios";
 
 
 const Balance = () => {
+
   const BASE_URL = "http://localhost:8080/api/account/303059/";
 
   const [inputValue, setInputValue] = useState("");
@@ -73,8 +74,8 @@ const Balance = () => {
         <span className="addCredito">Adicionar Crédito</span>
         <div className="add-saldo">
           <input
-            value={inputValue}
-            onChange={(event) => setInputValue(event.target.value)}
+            value={valueCredit}
+            onChange={(event) => setInputValueCredit(event.target.value)}
             className="qtt-input"
             placeholder="Valor"
           />
@@ -88,8 +89,8 @@ const Balance = () => {
         <span className="addCredito">Estornar Crédito</span>
         <div className="add-saldo">
           <input
-            value={inputValue2}
-            onChange={(event) => setInputValue2(event.target.value)}
+            value={valueEstorno}
+            onChange={(event) => setValueEstorno(event.target.value)}
             className="qtt-input"
             placeholder="Valor"
           />

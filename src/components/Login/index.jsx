@@ -27,9 +27,6 @@ export const Login = () => {
     }
   };
 
-  const sleep = (milliseconds) => {
-    return new Promise((resolve) => setTimeout(resolve, milliseconds));
-  };
 
   return (
     <Container>
