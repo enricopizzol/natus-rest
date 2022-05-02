@@ -15,13 +15,16 @@ const Balance = () => {
 
   const [inputValue, setInputValue] = useState("");
   const [inputValue2, setInputValue2] = useState("");
+  const [valueCredit, setInputValueCredit] = useState("");
+  const [valueEstorno, setValueEstorno] = useState("");
   const [currentBalance, setCurrentBalance] = useState("");
-  const [checkDeposit, setcheckDeposit] = useState(false);
-  const [checkReturn, setReturn] = useState(false);
+  
 
   const addCredit = (value) => {
     console.log("Entrou no addCredit");
 
+    console.log("currentBalance" + parseFloat(currentBalance));
+    console.log("value" + parseFloat(value));
     let newBalance = parseFloat(currentBalance) + parseFloat(value);
     updateBalance(newBalance);
     setCurrentBalance(newBalance);
@@ -36,6 +39,7 @@ const Balance = () => {
 
   const updateBalance = (value) => {
     const url = BASE_URL + value;
+    console.log("url" + url)
     axios
       .put(url)
       .then((response) => {
@@ -81,7 +85,7 @@ const Balance = () => {
           />
           <FontAwesomeIcon
             icon={faCheck}
-            onClick={() => addCredit(inputValue)}
+            onClick={() => addCredit(valueCredit)}
           />
         </div>
       </div>
@@ -96,7 +100,7 @@ const Balance = () => {
           />
           <FontAwesomeIcon
             icon={faCheck}
-            onClick={() => returnCredit(inputValue2)}
+            onClick={() => returnCredit(valueEstorno)}
           />
         </div>
       </div>

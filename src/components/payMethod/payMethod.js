@@ -56,16 +56,19 @@ const PayMethod = () => {
   let saldo = -40;
 
   const validateId = (id) => {
-    if ((id === "707070" || id === "123456") && (saldo > -30)){
+    if ((id === "707070" || id === "123456") && saldo > -30) {
       setCredentialStatus("valid");
-    } else if ((id === "808080" || id === "808080" ) || (saldo <= -30)) {
+    } else if (id === "808080" || id === "808080" || saldo <= -30) {
       setCredentialStatus("invalid");
     }
   };
 
+  // to be done
+  const searchId = (id) => {};
+
   return (
     <>
-      <div className = "pm-wrapper">
+      <div className="pm-wrapper">
         <div className="payment-list">
           <div className="payment-container">
             <div
