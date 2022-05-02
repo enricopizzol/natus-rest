@@ -2,17 +2,15 @@ import axios from "axios";
 
 const BASE_URL = "http://localhost:8080/api/products";
 
-
-const newProduct = (name,price,quantity) => {
+const newProduct = (name, price, quantity) => {
   return { name: name, price: price, quantity: quantity };
 };
 
-export function getProducts() {
+export async function getProducts() {
   axios
     .get(BASE_URL)
     .then((response) => {
-      const data = response.data;
-      console.log(data);
+      console.log(typeof response.data);
       return response.data;
     })
     .catch((error) => {
@@ -21,9 +19,8 @@ export function getProducts() {
 }
 
 export function getProductByName(name) {
+  const url = BASE_URL + "/" + name;
 
-    const url = BASE_URL + '/' + name;
-  
   axios
     .get(url)
     .then((response) => {
@@ -35,7 +32,6 @@ export function getProductByName(name) {
       console.log("error:" + error);
     });
 }
-
 
 export function deleteProduct(name) {
   const url = BASE_URL + "/" + name;
@@ -52,7 +48,7 @@ export function deleteProduct(name) {
     });
 }
 
-export function updateProductQuantity(name,quantity) {
+export function updateProductQuantity(name, quantity) {
   const url = BASE_URL + "/" + name + "/" + quantity;
 
   axios
@@ -81,7 +77,6 @@ export function updateProductPrice(name, price) {
       console.log("error:" + error);
     });
 }
-
 
 export function insertProduct(name, price, quantity) {
   axios

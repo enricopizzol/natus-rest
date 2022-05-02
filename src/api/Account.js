@@ -3,13 +3,12 @@ import axios from "axios";
 const BASE_URL = "http://localhost:8080/api/account/";
 
 
-export function checkBalance(id) {
+export async function checkBalance(id) {
     const url = BASE_URL + id;
   axios
     .get(url)
     .then((response) => {
-      const data = response.data;
-      console.log(data);
+      console.log(typeof response.data);
       return response.data;
     })
     .catch((error) => {

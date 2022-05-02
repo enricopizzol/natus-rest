@@ -11,6 +11,8 @@ import {
 } from "../../api/Stock";
 import { getStudentById, getStudents, insertStudent } from "../../api/Students";
 import { Container, Content, Input, InputContent, StyledLink } from "./styles";
+import axios from "axios";
+
 
 export const Login = () => {
   const [typePassword, setTypePassword] = useState("password");
@@ -28,26 +30,6 @@ export const Login = () => {
   const sleep = (milliseconds) => {
     return new Promise((resolve) => setTimeout(resolve, milliseconds));
   };
-
-  const doSomething = async () => {
-    await sleep(2000);
-    //do stuff
-  };
-  const shopcart = () =>{
-    return [{"name":"pao","price":10.0,"quantity":8},{"name":"pao2","price":10.0,"quantity":8},
-        {"name":"pao3","price":10.0,"quantity":8}
-    ];
-  };
-
-  useEffect(() => {
-  
-    insertOrder(shopcart(),189.0,303059);
-    doSomething();
-   
-    
-
-
-  }, []);
 
   return (
     <Container>
