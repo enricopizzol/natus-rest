@@ -4,26 +4,36 @@ export const OrderHistoryExample = () => {
             "orders": [
                 {
                     "products": [
-                        { "name": "Pão de Queijo", "quantity": 10, "price": 3.0, "category": "Salgado" },
-                        { "name": "Todinho", "quantity": 4, "price": 1.5, "category": "Bebida"},
-                        { "name": "7Bello", "quantity": 8, "price": 0.5, "category": "Doce"}
+                        { "name": "Sanduba", "quantity": 10, "price": 10.0, "category": "Salgado" },
+                        { "name": "Baguete", "quantity": 20, "price": 5, "category": "Salgado"},
+                        { "name": "Coca - Cola", "quantity": 30, "price": 5.5, "category": "Bebida"}
                     ],
-                    "total": 40.0,
+                    "total": 365.0,
                     "date": "22/04/2022"
                 },
                 {
                     "products": [
-                        { "name": "Cachorro Quente", "quantity": 1, "price": 8.0, "category": "Salgado"},
-                        { "name": "Coca-Cola", "quantity": 1, "price": 5.5, "category": "Bebida"},
-                        { "name": "Pastel", "quantity": 2, "price": 7.5, "category": "Salgado"}
+                        { "name": "Hamburguer", "quantity": 25, "price": 10.0, "category": "Salgado"},
+                        { "name": "Enroladinho", "quantity": 15, "price": 5.0, "category": "Salgado"},
+                        { "name": "Fanta", "quantity": 40, "price": 5.5, "category": "Bebida"}
                     ],
-                    "total": 28.5,
+                    "total": 545.0,
                     "date": "18/03/2022"
                 },
                 {
                     "products": [
-                        { "name": "Banana", "quantity": 4, "price": 4.75, "category": "Saudável" },
-                        { "name": "Água (600mL)", "quantity": 1, "price": 1.5, "category": "Bebida" }
+                        { "name": "Salada de fruta", "quantity": 5, "price": 5.5, "category": "Bebida" },
+                        { "name": "Mousse de chocolate", "quantity": 5, "price": 5.5, "category": "Doce" },
+                        { "name": "Pudim", "quantity": 8, "price": 6.8, "category": "Doce" },
+                        { "name": "Toddynho", "quantity": 12, "price": 6.8, "category": "Bebida" },
+                    ],
+                    "total": 20.5,
+                    "date": "12/01/2022"
+                },
+                {
+                    "products": [
+                        { "name": "Banana", "quantity": 20, "price": 6.8, "category": "Saudável" },
+                        { "name": "H2O", "quantity": 40, "price": 6.8, "category": "Bebida" }
                     ],
                     "total": 20.5,
                     "date": "12/01/2022"
