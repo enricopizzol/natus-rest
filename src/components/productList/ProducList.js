@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import axios from "axios";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { avalaibleProducts } from "./products";
 import {
@@ -19,7 +20,24 @@ const ProductList = () => {
     newItems[index].quantity++;
 
     setItems(newItems);
+    updateStock(newItems[index].itemName, newItems[index].quantity);
     calculateBill();
+  };
+
+  const updateStock = (name, quantity) => {
+    const BASE_URL = "http://localhost:8080/api/products";
+    const url = BASE_URL + "/" + name + "/" + quantity;
+
+    axios
+      .put(url)
+      .then((response) => {
+        const data = response.data;
+        console.log(data);
+        return response.data;
+      })
+      .catch((error) => {
+        console.log("error:" + error);
+      });
   };
 
   const handleQuantityDecrease = (index) => {
@@ -28,6 +46,7 @@ const ProductList = () => {
     if (newItems[index].quantity > 0) newItems[index].quantity--;
 
     setItems(newItems);
+    updateStock(newItems[index].itemName, newItems[index].quantity);
     calculateBill();
   };
 

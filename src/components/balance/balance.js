@@ -2,8 +2,6 @@ import React, { useState, useEffect } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "./balance.css";
 import {
-  faCircle,
-  faCheckCircle,
   faCheck,
 } from "@fortawesome/free-solid-svg-icons";
 import axios from "axios";
@@ -13,8 +11,7 @@ const Balance = () => {
 
   const BASE_URL = "http://localhost:8080/api/account/303059/";
 
-  const [inputValue, setInputValue] = useState("");
-  const [inputValue2, setInputValue2] = useState("");
+  
   const [valueCredit, setInputValueCredit] = useState("");
   const [valueEstorno, setValueEstorno] = useState("");
   const [currentBalance, setCurrentBalance] = useState("");
@@ -31,7 +28,6 @@ const Balance = () => {
   };
 
   
-
   const returnCredit = () => {
     updateBalance(0);
     console.log("zerou a moneda!!");

@@ -11,7 +11,6 @@ const PayMethod = () => {
   const [inputValue, setInputValue] = useState("");
   const [creditSelected, setCreditValue] = useState(false);
   const [modalSelected, setModal] = useState(false);
-  const [debitSelected, setDebitValue] = useState(false);
   const [cashSelected, setCashValue] = useState(false);
   const [currentOption, setCurrentOption] = useState("");
   const [paymentButton, setPaymentButton] = useState(false);
@@ -23,11 +22,7 @@ const PayMethod = () => {
     setCreditValue(!value);
     setModal(!value);
   };
-  const toggleDebit = (value) => {
-    disableLastToggle(currentOption);
-    setCurrentOption("debit");
-    setDebitValue(!value);
-  };
+
   const toggleCash = (value) => {
     disableLastToggle(currentOption);
     setCurrentOption("cash");
@@ -37,10 +32,6 @@ const PayMethod = () => {
   const disableLastToggle = (option) => {
     if (option === "credit") {
       setCreditValue(false);
-      setModal(false);
-    }
-    if (option === "debit") {
-      setDebitValue(false);
       setModal(false);
     }
     if (option === "cash") {
@@ -56,12 +47,18 @@ const PayMethod = () => {
   let saldo = -40;
 
   const validateId = (id) => {
+    
+
+
     if ((id === "707070" || id === "123456") && saldo > -30) {
       setCredentialStatus("valid");
     } else if (id === "808080" || id === "808080" || saldo <= -30) {
       setCredentialStatus("invalid");
     }
   };
+
+   
+
 
   // to be done
   const searchId = (id) => {};
@@ -84,22 +81,6 @@ const PayMethod = () => {
                 <>
                   <FontAwesomeIcon icon={faCircle} />
                   <span>{"Crédito"}</span>
-                </>
-              )}
-            </div>
-            <div
-              className="payment-name"
-              onClick={() => toggleDebit(debitSelected)}
-            >
-              {debitSelected ? (
-                <>
-                  <FontAwesomeIcon icon={faCheckCircle} />
-                  <span>{"Débito"}</span>
-                </>
-              ) : (
-                <>
-                  <FontAwesomeIcon icon={faCircle} />
-                  <span>{"Débito"}</span>
                 </>
               )}
             </div>
@@ -133,7 +114,7 @@ const PayMethod = () => {
             value={inputValue}
             onChange={(event) => setInputValue(event.target.value)}
             className="id-input"
-            placeholder="ID do Estudante"
+            placeholder="Confirme o Id:"
           />
           <FontAwesomeIcon
             icon={faCheck}
@@ -158,5 +139,9 @@ const PayMethod = () => {
     </>
   );
 };
+
+
+
+
 
 export default PayMethod;
