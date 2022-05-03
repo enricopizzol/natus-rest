@@ -16,19 +16,6 @@ const StockReport = () => {
     return data;
   };
 
-  const updateProductQuantity = () => {
-    {
-      userHistory["orders"].map((order, orderIndex) =>
-        order["products"].map(
-          (product, productIndex) => (product.quantity = getQuantity(product))
-        )
-      );
-    }
-  };
-
-  useEffect(() => {
-    updateProductQuantity();
-  }, []);
 
   return (
     <>
