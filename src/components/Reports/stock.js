@@ -1,22 +1,14 @@
 import React, { useState } from "react";
 import { OrderHistoryExample } from "../orderHistory/orderHistoryExample";
 import "./stock.css";
-import axios from "axios";
+
 
 const StockReport = () => {
   const [userHistory, setUserHistory] = useState(
     JSON.parse(OrderHistoryExample())
   );
 
-  const getQuantity = async (product) => {
-    const BASE_URL = "http://localhost:8080/api/products";
-    const url = BASE_URL + "/" + product.name + "/" + product.quantity;
-    let { data } = await axios.get(url);
-
-    return data;
-  };
-
-
+  
   return (
     <>
       <div className="hs-container">
@@ -47,7 +39,7 @@ const StockReport = () => {
                     {order["products"].map((product, productIndex) => (
                       <tr className="hs">
                         <td className="hs">{product.name}</td>
-                        <td className="hs">{() => getQuantity(product)}</td>
+                        <td className="hs">{product.quantity}</td>
                         <td className="hs">R$ {product.price}</td>
                         <td className="hs">{product.category}</td>
                         <td className="hs">{order.date}</td>

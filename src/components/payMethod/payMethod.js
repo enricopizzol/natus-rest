@@ -50,7 +50,7 @@ const PayMethod = () => {
     
 
 
-    if ((id === "707070" || id === "123456") && saldo > -30) {
+    if ((id === "303059" || id === "123456") ) {
       setCredentialStatus("valid");
     } else if (id === "808080" || id === "808080" || saldo <= -30) {
       setCredentialStatus("invalid");

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { OrderHistoryExample } from "./orderHistoryExample";
+import { OrderHistoryTemplate } from "./orderHistoryTemplate";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faChevronRight,
@@ -10,7 +10,7 @@ import {
 import "./orderHistory.css";
 
 const OrderHistory = () => {
-    const [userHistory, setUserHistory] = useState(JSON.parse(OrderHistoryExample()));
+    const [userHistory, setUserHistory] = useState(JSON.parse(OrderHistoryTemplate()));
 
     return (
         <>

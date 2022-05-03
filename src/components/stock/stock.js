@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { avalaibleProducts } from "../productList/products";
+import { avalaibleProducts } from "./products";
 import { faTrashCan, faPlus, faMinus } from "@fortawesome/free-solid-svg-icons";
 import "./stock.css";
 import { deleteProduct, insertProduct } from "../../api/Stock";
